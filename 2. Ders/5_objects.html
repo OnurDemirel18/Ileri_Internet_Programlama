@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <p id="cikti"></p>
+    <script>
+        kisi = {
+            ad:"",
+            soyad:"",
+            yas:0,
+            yaslandir:function(){this.yas++},
+            yazdir_ad:function(){
+                document.getElementById("baslik").innerHTML = this.ad + " " + this.soyad; },
+            yazdir_yas:function(){
+                document.getElementById("cikti").innerHTML = "Yaşınız : " + this.yas;}
+
+        }
+
+        kisi.ad = "Onur";
+        kisi.soyad = "Demirel";
+        kisi.yas = 22;
+        kisi.yaslandir();
+        kisi.yazdir_ad();
+        kisi.yazdir_yas();
+        
+        var yeni_kisi = {};
+        Object.assign(yeni_kisi, kisi);
+        yeni_kisi.ad = "Yücel";
+        console.log("Yeni kişinin adı : " + yeni_kisi.ad);
+    </script>
+</body>
+</html>
